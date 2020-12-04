@@ -1,5 +1,23 @@
-spring.datasource.url: jdbc:h2:file:./camunda-h2-database
+camunda.bpm:
+  admin-user:
+    id: demo
+    password: demo
+  filter:
+    create: All tasks
+  webapp.application-path: /
 
-camunda.bpm.admin-user:
-  id: demo
-  password: demo
+server:
+  servlet:
+    context-path: /
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:h2:file:./camunda-h2-database
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: <your-client-id>
+            clientSecret: <your-client-secret>
